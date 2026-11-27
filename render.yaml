@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: portfolio-api
+    runtime: node
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: CORS_ORIGIN
+        sync: false   # set to your Vercel URL
+      - key: SMTP_HOST
+        sync: false
+      - key: SMTP_USER
+        sync: false
+      - key: SMTP_PASS
+        sync: false
+      - key: MAIL_TO
+        value: debashispaul908@gmail.com
